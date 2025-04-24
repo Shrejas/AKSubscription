@@ -66,7 +66,7 @@
 		0EB3D1B62649A552A603D249DE0F9F0A /* Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests.modulemap"; sourceTree = "<group>"; };
 		1E892EA9856DEBF3B403F2CFE7500FBC /* Pods-SimpleSubscriptipnsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleSubscriptipnsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		21DE77B71E2875CDFCB84FC4459E9773 /* ConsumableStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConsumableStore.swift; path = AKSubscription/ConsumableStore.swift; sourceTree = "<group>"; };
-		36BCE86E15904818B33F3F2D7E701F23 /* AKSubscription.podspec.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; path = AKSubscription.podspec.json; sourceTree = "<group>"; };
+		36BCE86E15904818B33F3F2D7E701F23 /* AKSubscription.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = AKSubscription.podspec; sourceTree = "<group>"; };
 		3B31388907B076D1D4C3CDCA3CDD6834 /* Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests"; path = Pods_SimpleSubscriptipns_SimpleSubscriptipnsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5B6CBB46A3379AF0A785C6035303B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3CDB583300140A28D61E3EDA7DE3914E /* AKSubscription.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AKSubscription.release.xcconfig; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		CC56CA828C2D3F79EAE898C71267B31C /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				36BCE86E15904818B33F3F2D7E701F23 /* AKSubscription.podspec.json */,
+				36BCE86E15904818B33F3F2D7E701F23 /* AKSubscription.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
