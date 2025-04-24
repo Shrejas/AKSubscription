@@ -16,5 +16,5 @@ public struct SubscriptionPayload: Codable {
     public let originalTransactionId: String?
     public let subscriptionStartDate: String?
     public let subscriptionEndDate: String?
-    public let productId: String?
+    public let productId: String? 
 }

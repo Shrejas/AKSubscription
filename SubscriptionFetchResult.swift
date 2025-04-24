@@ -12,5 +12,5 @@ import Foundation
 /// Represents the result of a subscription fetch request.
 public enum SubscriptionFetchResult {
     case success(latest: SubscriptionPayload?, history: [SubscriptionPayload])
-    case failure(String)
+    case failure(String) 
 }

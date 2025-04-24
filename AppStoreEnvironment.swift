@@ -13,5 +13,5 @@ public enum AppStoreEnvironment: String {
     case simulator
     case sandbox
     case production
-    case unknown
+    case unknown 
 }

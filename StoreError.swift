@@ -10,5 +10,5 @@ import Foundation
 // MARK: - Store Errors
 
 enum StoreError: Error {
-    case failedVerification
+    case failedVerification 
 }

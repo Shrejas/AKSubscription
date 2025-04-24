@@ -49,7 +49,7 @@ public class RenewableStore: BaseStore {
     /// Purchases a given product and updates the subscription state.
     public func purchaseProduct(product: Product, completion: @escaping (Transaction) -> Void) {
         Task {
-            do {
+          //  do {
                 await buyProduct(product) { transaction, error in
                     guard let transaction = transaction else { return }
 
@@ -76,11 +76,11 @@ public class RenewableStore: BaseStore {
                         completion(transaction)
                     }
                 }
-            } catch {
-                logger.error("❌ Purchase failed: \(error, privacy: .public)")
-                showAlert(with: "Purchase failed: \(error)", alertTitle: "Error")
-                isLoading = false
-            }
+//            } catch {
+//                logger.error("❌ Purchase failed: \(error, privacy: .public)")
+//                showAlert(with: "Purchase failed: \(error)", alertTitle: "Error")
+//                isLoading = false
+//            }
         }
     }
 
@@ -100,7 +100,7 @@ public class RenewableStore: BaseStore {
 
     /// Returns active subscription details for a specific subscription group.
     public func activeSubscription(forGroupID groupID: String) async -> (isActive: Bool, payload: SubscriptionPayload?) {
-        do {
+       // do {
             while allProducts.isEmpty {
                 try? await Task.sleep(nanoseconds: 300_000_000) // 0.3 sec
             }
@@ -127,16 +127,16 @@ public class RenewableStore: BaseStore {
                 }
             }
 
-        } catch {
-            logger.error(("❌ Error checking active subscription for group \(groupID): \(error, privacy: .public)"))
-        }
+//        } catch {
+//            logger.error(("❌ Error checking active subscription for group \(groupID): \(error, privacy: .public)"))
+//        }
 
         return (false, nil)
     }
 
     /// Fetches subscription info: latest purchase and history.
     public func fetchSubscriptionInfo() async -> SubscriptionFetchResult {
-        do {
+      //  do {
             var tempHistory: [SubscriptionPayload] = []
             var latestProductIDs: Set<String> = []
 
@@ -171,9 +171,9 @@ public class RenewableStore: BaseStore {
             let latest = tempHistory.first(where: { latestProductIDs.contains($0.productId ?? "") })
             return .success(latest: latest, history: tempHistory)
 
-        } catch {
-            return .failure("Failed to fetch subscription info: \(error.localizedDescription)")
-        }
+//        } catch {
+//            return .failure("Failed to fetch subscription info: \(error.localizedDescription)")
+//        }
     }
 
     // MARK: - Subscription Status & History
@@ -215,7 +215,8 @@ public class RenewableStore: BaseStore {
             }
 
             let result = await Transaction.latest(for: productID)
-            let transaction = try result.flatMap { try? checkVerified($0) }
+            let transaction = result.flatMap { try? checkVerified($0) }
+
 
             let statuses = try await subscription.status
 
@@ -295,7 +296,7 @@ extension RenewableStore {
     public func restorePurchases(completion: @escaping (Bool, Error?) -> Void) {
         Task {
             do {
-                let results = try await AppStore.sync()
+                let results: () = try await AppStore.sync()
                 logger.debug("🛠 Restore results: \(String(describing: results), privacy: .public)")
 
                 

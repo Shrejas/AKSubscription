@@ -46,7 +46,7 @@ public final class NonConsumableStore: BaseStore {
         Task { [weak self] in
             guard let self else { return }
             
-            do {
+            //do {
                 await self.buyProduct(product) { transaction, error in
                     if let transaction {
                         DispatchQueue.main.async {
@@ -58,12 +58,12 @@ public final class NonConsumableStore: BaseStore {
                         }
                     }
                 }
-            } catch {
-                logger.error("❌ Purchase failed: \(error.localizedDescription, privacy: .public)")
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            }
+//            } catch {
+//                logger.error("❌ Purchase failed: \(error.localizedDescription, privacy: .public)")
+//                DispatchQueue.main.async {
+//                    completion(nil, error)
+//                }
+//            }
         }
     }
     

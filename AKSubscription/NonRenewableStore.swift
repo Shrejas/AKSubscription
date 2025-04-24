@@ -49,7 +49,7 @@ public final class NonRenewableStore: BaseStore {
     public func loadEntitlements() async {
         var validEntitlements: [String: Transaction] = [:]
 
-        do {
+      //  do {
             for await result in Transaction.currentEntitlements {
                 if let transaction = try? checkVerified(result),
                    transaction.productType == .nonRenewable {
@@ -58,9 +58,9 @@ public final class NonRenewableStore: BaseStore {
             }
 
             self.nonRenewableEntitlements = validEntitlements
-        } catch {
-            logger.error("❌ Failed to load entitlements: \(error.localizedDescription, privacy: .public)")
-        }
+//        } catch {
+//            logger.error("❌ Failed to load entitlements: \(error.localizedDescription, privacy: .public)")
+//        }
     }
 
     // MARK: - Purchase Flow
@@ -74,7 +74,7 @@ public final class NonRenewableStore: BaseStore {
         completion: @escaping (_ transaction: Transaction?, _ error: Error?) -> Void
     ) {
         Task {
-            do {
+            //do {
                 await buyProduct(product) {  transaction, error in
                     if let transaction {
                         Task {
@@ -89,12 +89,12 @@ public final class NonRenewableStore: BaseStore {
                         }
                     }
                 }
-            } catch {
-                logger.error("❌ Purchase failed: \(error.localizedDescription, privacy: .public)")
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
-            }
+//            } catch {
+//                logger.error("❌ Purchase failed: \(error.localizedDescription, privacy: .public)")
+//                DispatchQueue.main.async {
+//                    completion(nil, error)
+//                }
+//            }
         }
     }
 
