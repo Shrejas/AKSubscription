@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.platform         = :ios, '17.0'
   s.swift_versions   = ['5.5', '5.6', '5.7', '5.8', '5.9']
-  s.source_files     = 'AKSubscription/**/*.{swift}'
+  s.source_files = ['AKSubscription/**/*.{swift}', 'AppStoreEnvironment.swift', 'StoreError.swift', 'SubscriptionPayload.swift', 'SubscriptionFetchResult.swift']
   s.frameworks       = ['SwiftUI', 'Foundation']
   s.requires_arc     = true
 end
