@@ -1,0 +1,6 @@
+framework module Pods_SimpleSubscriptipns {
+  umbrella header "Pods-SimpleSubscriptipns-umbrella.h"
+
+  export *
+  module * { export * }
+}

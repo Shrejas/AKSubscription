@@ -1,0 +1,6 @@
+framework module Pods_SimpleSubscriptipns_SimpleSubscriptipnsUITests {
+  umbrella header "Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

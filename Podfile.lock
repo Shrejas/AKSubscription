@@ -1,0 +1,16 @@
+PODS:
+  - AKSubscription (1.0.0)
+
+DEPENDENCIES:
+  - AKSubscription (from `.`)
+
+EXTERNAL SOURCES:
+  AKSubscription:
+    :path: "."
+
+SPEC CHECKSUMS:
+  AKSubscription: 439b2136bbb2ba613bd7a6f83fb8c648b6351b79
+
+PODFILE CHECKSUM: a66fcebe559cb5bee3f31feff9d436843ce9127b
+
+COCOAPODS: 1.16.2

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F3B5BA68-B036-4AA4-8713-2B47F5A232A7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9ACF30E1-2416-405F-A680-F7F70B06AB15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleSubscriptipns/IAP/BaseStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "requestProducts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9ACF30E1-2416-405F-A680-F7F70B06AB15 - f529a395e32b5a22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SimpleSubscriptipns.BaseStore.requestProducts() async -&gt; ()"
+                  moduleName = "SimpleSubscriptipns"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iemacbookpro2014/Desktop/Demo/SimpleSubscriptipns/SimpleSubscriptipns/IAP/BaseStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "9ACF30E1-2416-405F-A680-F7F70B06AB15 - f529a395e32b5a22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for SimpleSubscriptipns.BaseStore.requestProducts() async -&gt; ()"
+                  moduleName = "SimpleSubscriptipns"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iemacbookpro2014/Desktop/Demo/SimpleSubscriptipns/SimpleSubscriptipns/IAP/BaseStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
