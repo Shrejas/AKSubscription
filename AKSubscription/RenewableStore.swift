@@ -49,7 +49,6 @@ public class RenewableStore: BaseStore {
     /// Purchases a given product and updates the subscription state.
     public func purchaseProduct(product: Product, completion: @escaping (Transaction) -> Void) {
         Task {
-          //  do {
                 await buyProduct(product) { transaction, error in
                     guard let transaction = transaction else { return }
 
@@ -76,11 +75,6 @@ public class RenewableStore: BaseStore {
                         completion(transaction)
                     }
                 }
-//            } catch {
-//                logger.error("❌ Purchase failed: \(error, privacy: .public)")
-//                showAlert(with: "Purchase failed: \(error)", alertTitle: "Error")
-//                isLoading = false
-//            }
         }
     }
 

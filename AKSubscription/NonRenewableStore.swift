@@ -49,7 +49,6 @@ public final class NonRenewableStore: BaseStore {
     public func loadEntitlements() async {
         var validEntitlements: [String: Transaction] = [:]
 
-      //  do {
             for await result in Transaction.currentEntitlements {
                 if let transaction = try? checkVerified(result),
                    transaction.productType == .nonRenewable {
@@ -58,9 +57,6 @@ public final class NonRenewableStore: BaseStore {
             }
 
             self.nonRenewableEntitlements = validEntitlements
-//        } catch {
-//            logger.error("❌ Failed to load entitlements: \(error.localizedDescription, privacy: .public)")
-//        }
     }
 
     // MARK: - Purchase Flow

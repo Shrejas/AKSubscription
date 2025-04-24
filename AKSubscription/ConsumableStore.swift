@@ -40,20 +40,12 @@ public class ConsumableStore: BaseStore {
         completion: @escaping (Transaction?, Error?) -> Void
     ) {
         Task {
-            do {
                 // Attempt to buy the product asynchronously
                 await buyProduct(product) { transaction, error in
                     DispatchQueue.main.async {
                         completion(transaction, error)
                     }
                 }
-            } catch {
-                // Log and handle error if purchase attempt fails
-                logger.error("Purchase failed: \(error, privacy: .public)")
-                DispatchQueue.main.async {
-                    self.isLoading = false
-                }
-            }
         }
     }
 }

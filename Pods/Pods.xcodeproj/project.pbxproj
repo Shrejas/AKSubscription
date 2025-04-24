@@ -228,6 +228,7 @@
 				36BCE86E15904818B33F3F2D7E701F23 /* AKSubscription.podspec */,
 			);
 			name = Pod;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -255,6 +256,7 @@
 		E6900267DBA054C9C6ACD816D106B721 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				CC56CA828C2D3F79EAE898C71267B31C /* Pod */,
 				FE392CBDDBBA1B3BAA5C4B4E07F36908 /* AKSubscription */,
 			);
 			name = "Development Pods";
@@ -290,7 +292,6 @@
 				02330FAE2DB8F8AD0005B082 /* StoreError.swift */,
 				02330FB02DB8F8EA0005B082 /* SubscriptionPayload.swift */,
 				02330FB22DB8F92E0005B082 /* SubscriptionFetchResult.swift */,
-				CC56CA828C2D3F79EAE898C71267B31C /* Pod */,
 				8B2A97AE8EEBD620AB09ADE51DC76B0F /* Support Files */,
 			);
 			name = AKSubscription;
