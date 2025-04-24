@@ -2,17 +2,17 @@
   "name": "AKSubscription",
   "version": "1.0.0",
   "source": {
-    "git": "https://github.com/IftekharQurashi/AkSubscription.git",
-    "tag": "3.0.1"
+    "git": "https://github.com/Shrejas/AKSubscriptions.git",
+    "tag": "0.0.1"
   },
   "summary": "Making purchase of subscription more easy hassle Free via AppKitSubscriptions",
   "homepage": "https://github.com/Tamp/AKSubscription",
   "license": "MIT",
   "authors": {
-    "Iftekhar Qurashi": "hack.iftekhar@gmail.com"
+    "Shrejash Chandel": "idevshrejash@gmail.com"
   },
   "platforms": {
-    "ios": "17.0"
+    "ios": "16.0"
   },
   "swift_versions": [
       "5.5",
