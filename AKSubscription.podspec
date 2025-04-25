@@ -3,8 +3,15 @@ Pod::Spec.new do |s|
   s.version          = '1.0.0'
   s.summary          = 'Making purchase of subscription more easy hassle Free via AppKitSubscriptions'
   s.description      = <<-DESC
-    A short description of AKSubscription.
-    This library simplifies handling subscriptions in iOS using StoreKit.
+    AKSubscription is a comprehensive iOS library that simplifies in-app subscription handling using StoreKit.
+    It provides easy-to-use interfaces for managing different types of subscriptions including:
+    * Consumable purchases
+    * Non-consumable purchases
+    * Auto-renewable subscriptions
+    * Non-renewing subscriptions
+    
+    The library handles all the complexity of StoreKit integration, receipt validation,
+    and subscription status management.
   DESC
   s.homepage         = 'https://github.com/Shrejas/AKSubscriptions.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
