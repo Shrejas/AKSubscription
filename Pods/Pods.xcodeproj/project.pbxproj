@@ -11,7 +11,7 @@
 		02330FAF2DB8F8AD0005B082 /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330FAE2DB8F8AD0005B082 /* StoreError.swift */; };
 		02330FB12DB8F8EA0005B082 /* SubscriptionPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330FB02DB8F8EA0005B082 /* SubscriptionPayload.swift */; };
 		02330FB32DB8F92E0005B082 /* SubscriptionFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02330FB22DB8F92E0005B082 /* SubscriptionFetchResult.swift */; };
-		02D3EFE52D9BC190002D810C /* IAPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3EFE42D9BC190002D810C /* IAPConstants.swift */; };
+		026740782DC39461004AD1F1 /* IAPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026740772DC39461004AD1F1 /* IAPConstants.swift */; };
 		0510B2D026BAEEB8A8BDECB56B63F94C /* Pods-SimpleSubscriptipnsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCE93722D8AF0FF1832C1AA73FAEC37 /* Pods-SimpleSubscriptipnsTests-dummy.m */; };
 		1EEA3549BA26058524EC53F788E9AF9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5B6CBB46A3379AF0A785C6035303B4 /* Foundation.framework */; };
 		1F33EE4F2D86C62C32B58BEBC9793BFC /* Pods-SimpleSubscriptipnsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61CE13CFA4243357C2F279F5DA4F8322 /* Pods-SimpleSubscriptipnsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,7 +61,7 @@
 		02330FAE2DB8F8AD0005B082 /* StoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
 		02330FB02DB8F8EA0005B082 /* SubscriptionPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPayload.swift; sourceTree = "<group>"; };
 		02330FB22DB8F92E0005B082 /* SubscriptionFetchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionFetchResult.swift; sourceTree = "<group>"; };
-		02D3EFE42D9BC190002D810C /* IAPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPConstants.swift; sourceTree = "<group>"; };
+		026740772DC39461004AD1F1 /* IAPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAPConstants.swift; path = AKSubscription/IAPConstants.swift; sourceTree = "<group>"; };
 		04F9AE61B7B59BCAB7DB157AC5E7389B /* Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0EB3D1B62649A552A603D249DE0F9F0A /* Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SimpleSubscriptipns-SimpleSubscriptipnsUITests.modulemap"; sourceTree = "<group>"; };
 		1E892EA9856DEBF3B403F2CFE7500FBC /* Pods-SimpleSubscriptipnsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleSubscriptipnsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -282,11 +282,11 @@
 		FE392CBDDBBA1B3BAA5C4B4E07F36908 /* AKSubscription */ = {
 			isa = PBXGroup;
 			children = (
-				02D3EFE42D9BC190002D810C /* IAPConstants.swift */,
 				49D64606F2D4CCBF602AE5963D2574FA /* BaseStore.swift */,
 				21DE77B71E2875CDFCB84FC4459E9773 /* ConsumableStore.swift */,
 				FB4BE374D2F9BBCAB8CA59955771244D /* NonConsumableStore.swift */,
 				9FBA2140905281E980BF27DE155A812D /* NonRenewableStore.swift */,
+				026740772DC39461004AD1F1 /* IAPConstants.swift */,
 				3DD8DF409971C97BBFDA4F00842CBEBB /* RenewableStore.swift */,
 				02330FAC2DB8F8840005B082 /* AppStoreEnvironment.swift */,
 				02330FAE2DB8F8AD0005B082 /* StoreError.swift */,
@@ -479,9 +479,9 @@
 			files = (
 				24F59F5DC6869CBF568E67643BD7F16C /* AKSubscription-dummy.m in Sources */,
 				02330FB12DB8F8EA0005B082 /* SubscriptionPayload.swift in Sources */,
-				02D3EFE52D9BC190002D810C /* IAPConstants.swift in Sources */,
 				A8FB3A2B33B15CAE046D01A170D59280 /* BaseStore.swift in Sources */,
 				981B864BB68C44FAB364F91D4DB7C268 /* ConsumableStore.swift in Sources */,
+				026740782DC39461004AD1F1 /* IAPConstants.swift in Sources */,
 				F17C056741B822D9DE2CAB0417FF8D1F /* NonConsumableStore.swift in Sources */,
 				F8A0761CE67DA27F8ABA56C0BD592A7C /* NonRenewableStore.swift in Sources */,
 				02330FAF2DB8F8AD0005B082 /* StoreError.swift in Sources */,

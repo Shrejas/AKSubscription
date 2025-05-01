@@ -1,3 +1,4 @@
+
 //
 //  IAPConstants.swift
 //  SimpleSubscriptipns
@@ -24,7 +25,7 @@ public struct IAPConstants {
     public static var nonConsumable: [String] = []
     
     /// Set available products dynamically from an external source
-    /// 
+    ///
     @MainActor
     public static func configure(
         autoRenewable: [String],
