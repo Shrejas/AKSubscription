@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AKSubscription'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'Making purchase of subscription more easy hassle Free via AppKitSubscriptions'
   s.description      = <<-DESC
     AKSubscription is a comprehensive iOS library that simplifies in-app subscription handling using StoreKit.
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/Shrejas/AKSubscriptions.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Shrejash Chandel' => 'idevshrejash@gmail.com' }
-  s.source           = { :git => 'https://github.com/Shrejas/AKSubscriptions.git', :tag => '1.0.0' }
+  s.source           = { :git => 'https://github.com/Shrejas/AKSubscriptions.git', :tag => '1.1.1' }
 
   s.platform         = :ios, '15.0'
   s.swift_versions   = ['5.5', '5.6', '5.7', '5.8', '5.9']
