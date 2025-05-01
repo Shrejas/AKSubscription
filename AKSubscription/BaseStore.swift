@@ -10,7 +10,7 @@ import StoreKit
 import os
 
 // MARK: - Base Store Class
-
+@MainActor
 public class BaseStore: ObservableObject {
     
     // MARK: - Properties
