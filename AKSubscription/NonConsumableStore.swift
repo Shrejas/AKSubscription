@@ -10,7 +10,6 @@ import StoreKit
 
 /// A store responsible for managing non-consumable in-app purchases.
 /// Supports purchase flow and entitlement verification.
-@Observable
 public final class NonConsumableStore: BaseStore {
     
     // MARK: - Singleton

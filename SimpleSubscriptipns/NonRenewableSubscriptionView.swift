@@ -10,7 +10,7 @@ import AKSubscription
 
 
 struct NonRenewableSubscriptionView: View {
-    @State private var store = NonRenewableStore.shared
+    @StateObject private var store = NonRenewableStore.shared
     @State private var expiryDate: Date?
     var body: some View {
         ZStack {

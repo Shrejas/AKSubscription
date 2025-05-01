@@ -8,9 +8,8 @@
 import Foundation
 import StoreKit
 
-@Observable
 public class ConsumableStore: BaseStore {
-    
+
     // MARK: - Singleton Instance
     public static let shared = ConsumableStore()
     

@@ -10,7 +10,7 @@ import AKSubscription
 
 struct NonConsumableProductView: View {
     @State private var purchasedProductIDs: Set<String> = []
-    private var store = NonConsumableStore.shared
+    @StateObject private var store = NonConsumableStore.shared
 
     var body: some View {
         ZStack {

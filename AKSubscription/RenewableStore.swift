@@ -9,14 +9,13 @@ import StoreKit
 
 // MARK: - Renewable Store (Auto-Renewable Subscription Handler)
 
-@Observable
 public class RenewableStore: BaseStore {
     
     // MARK: - Singleton Instance
     public static var shared = RenewableStore()
     
     // MARK: - Public Properties
-    public var isAnySubscriptionActive: Bool = false
+   @Published public var isAnySubscriptionActive: Bool = false
     
     /// Dictionary of renewable products grouped by their subscriptionGroupID.
     public var renewableProducts: [String: [Product]] {
@@ -34,7 +33,7 @@ public class RenewableStore: BaseStore {
         return groupedSubscriptions
     }
     
-    public var productsHistory: [SubscriptionPayload] = []
+   @Published public var productsHistory: [SubscriptionPayload] = []
     
     // MARK: - Initializer
     public override init() {

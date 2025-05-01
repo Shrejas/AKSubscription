@@ -11,18 +11,17 @@ import os
 
 // MARK: - Base Store Class
 
-@Observable
-public class BaseStore {
+public class BaseStore: ObservableObject {
     
     // MARK: - Properties
     
-    var allProducts: [Product] = []
+    @Published var allProducts: [Product] = []
     public static var productIds: [String] = []
-    public var isLoading: Bool = false
-    var alertMessage: String = ""
-    var alertType: String = ""
-    var showAlert: Bool = false
-    var subscriptionGroups: [String: [Product]] = [:]
+    @Published public var isLoading: Bool = false
+    @Published var alertMessage: String = ""
+    @Published var alertType: String = ""
+    @Published var showAlert: Bool = false
+    @Published var subscriptionGroups: [String: [Product]] = [:]
     public let logger = Logger(subsystem: "com.infoenum.subscriptions", category: "Store")
 
     

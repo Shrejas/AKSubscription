@@ -10,7 +10,6 @@ import StoreKit
 
 /// A store responsible for managing non-renewable in-app purchases.
 /// Handles product fetching, transaction verification, and entitlement management.
-@Observable
 public final class NonRenewableStore: BaseStore {
     
     // MARK: - Singleton
@@ -29,8 +28,10 @@ public final class NonRenewableStore: BaseStore {
 
     /// A dictionary of valid entitlements for non-renewable purchases.
     /// Keyed by product ID.
-    @MainActor
-    public private(set) var nonRenewableEntitlements: [String: Transaction] = [:]
+//    @MainActor
+//    public private(set) var nonRenewableEntitlements: [String: Transaction] = [:]
+    @Published public private(set) var nonRenewableEntitlements: [String: Transaction] = [:]
+
 
     // MARK: - Initialization
     
@@ -70,7 +71,6 @@ public final class NonRenewableStore: BaseStore {
         completion: @escaping (_ transaction: Transaction?, _ error: Error?) -> Void
     ) {
         Task {
-            //do {
                 await buyProduct(product) {  transaction, error in
                     if let transaction {
                         Task {
@@ -85,12 +85,6 @@ public final class NonRenewableStore: BaseStore {
                         }
                     }
                 }
-//            } catch {
-//                logger.error("❌ Purchase failed: \(error.localizedDescription, privacy: .public)")
-//                DispatchQueue.main.async {
-//                    completion(nil, error)
-//                }
-//            }
         }
     }
 
