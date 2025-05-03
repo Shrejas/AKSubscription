@@ -11,6 +11,7 @@ import AKSubscription
 import StoreKit
 
 struct RenewableSubscriptionView: View {
+    //
    @StateObject private var store = RenewableStore.shared
     let info = RenewableStore.shared.getSubscriptionInfo()
     var body: some View {
