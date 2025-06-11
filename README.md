@@ -1,12 +1,17 @@
-# 🔁 AKSubscriptionKit
+![pod](https://img.shields.io/badge/pod-v1.0.0-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
+![platform](https://img.shields.io/badge/platform-iOS_17.0-lightgrey)
+![swift](https://img.shields.io/badge/swift-5.5+-orange)
+# 🔁 AKSubscription
 
 A simple Swift wrapper for managing **Renewable Subscriptions** and **Non-Consumable** purchases using `StoreKit`.
 
 ---
+# Requirements
+## Installation
 
-## 📦 Installation
-
-Add the pod to your `Podfile`:
+# CocoaPods
+AKSubscription is available through CocoaPods. To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'AKSubscription'
@@ -15,13 +20,19 @@ Then run:
 ```ruby
 pod install
 ```
+# Swift Package Manager
+1. Open Xcode → File → Add Package Dependency
+2. Enter URL:
+```ruby
+https://github.com/Shrejas/AKSubscriptions.git
+```
 Importing AKSubscription:
 ```ruby
 import AKSubscription
 ```
 - The AKSubscription framework is imported to provide subscription-related functionalities, such as fetching subscription information, managing products, and handling purchase transactions.
 
-🚀 Getting Started
+# Usage
 1. Accessing RenewableStore:
 ```ruby
 //Renewable Subscription:
@@ -79,7 +90,6 @@ case .production:
 - This is useful for debugging and testing purposes.
 
 ```ruby
-.onAppear {
     store.isLoading = true
      DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
         Task{
@@ -114,86 +124,76 @@ case .production:
             print("❓ Unknown App Store Environment")
         }
     })
-}
 ```
 
 6. Accessing Subscription Products and Displaying Subscription Status
 - Renewable Subscription:
 ```ruby
-ForEach(store.renewableProducts.values.flatMap { $0 }, id: \.id) { product in
-    VStack {
-        print(product.displayName)
-        print(product.description)
-        print(product.displayPrice)
-                           
-        if let payload = store.getSubscription(for: product.id) {
-            if let endDate = payload.subscriptionEndDate {
-                if let isLatest = payload.isLatestPurchased, isLatest {
-                    print("✅ Active Subscription")
-                } else if let isSubscribed = payload.isSubscribed, isSubscribed {
-                    print("🟢 Subscribed (Not Latest)")
-                } else {
-                    print("🔴 Subscription Expired")
-                }
-                                    
-                // ✅ Additional Info (Optional)
-                if let originalTransactionId = payload.originalTransactionId {
-                    print("Transaction ID: \(originalTransactionId)")
-                }
-                                    
-                if let productId = payload.productId {
-                    print("Product ID: \(productId)")
-                }
-                                    
-                if let purchaseDate = payload.subscriptionStartDate {
-                    print("Purchased On: \(purchaseDate)")
-                }
-                                    
-                if let endDate = payload.subscriptionEndDate {
-                    print("Expires On: \(endDate)")
-                }
+let allProducts = store.renewableProducts.values.flatMap { $0 }
+
+for product in allProducts {
+    print(product.displayName)
+    print(product.description)
+    print(product.displayPrice)
+
+    if let payload = store.getSubscription(for: product.id) {
+        if let endDate = payload.subscriptionEndDate {
+            if let isLatest = payload.isLatestPurchased, isLatest {
+                print("✅ Active Subscription")
+            } else if let isSubscribed = payload.isSubscribed, isSubscribed {
+                print("🟢 Subscribed (Not Latest)")
+            } else {
+                print("🔴 Subscription Expired")
             }
+
+            // ✅ Additional Info (Optional)
+            if let originalTransactionId = payload.originalTransactionId {
+                print("Transaction ID: \(originalTransactionId)")
+            }
+
+            if let productId = payload.productId {
+                print("Product ID: \(productId)")
+            }
+
+            if let purchaseDate = payload.subscriptionStartDate {
+                print("Purchased On: \(purchaseDate)")
+            }
+
+            print("Expires On: \(endDate)")
         }
     }
 }
 ```
 - Non-Renewable Subscription:
 ```ruby
-ForEach(store.nonRenewableProducts, id: \.id) { product in
-    VStack {
-        print(product.displayName)
-        print(product.description)
-        print(product.displayPrice)
-                                        
-        if let transaction = store.nonRenewableEntitlements[product.id] {
-            let purchaseDate = transaction.purchaseDate
-            print("OriginalID:-\(transaction.originalID)")
-            print("ID:-\(transaction.id)")
-            print("PurchaseDate:\(transaction.purchaseDate)")
-        }
-    }                                    
+for product in store.nonRenewableProducts {
+    print(product.displayName)
+    print(product.description)
+    print(product.displayPrice)
+
+    if let transaction = store.nonRenewableEntitlements[product.id] {
+        let purchaseDate = transaction.purchaseDate
+        print("OriginalID: \(transaction.originalID)")
+        print("ID: \(transaction.id)")
+        print("PurchaseDate: \(purchaseDate)")
+    }
 }
 ```
 - Consumable Subscription:
 ```ruby
-//
-ForEach(store.consumableProducts, id: \.id) { product in
-    VStack {
-        print(product.displayName)
-        print(product.description)
-        print(product.displayPrice)
-    }
+for product in store.consumableProducts {
+    print(product.displayName)
+    print(product.description)
+    print(product.displayPrice)
 }
 ```
 - Non-Consumable Subscription:
 ```ruby
-ForEach(store.nonConsumableProducts, id: \.id) { product in
-    VStack {
-        print(product.displayName)
-        print(product.description)
-        print(product.displayPrice)
-    }
-    
+for product in store.nonConsumableProducts {
+    print(product.displayName)
+    print(product.description)
+    print(product.displayPrice)
+
     if purchasedProductIDs.contains(product.id) {
         print("Purchased")
     }
@@ -225,7 +225,7 @@ store.purchaseProduct(product: product) { transaction in
 9. Loding Property:
 ```ruby
 store.isLoading = true
- store.isLoading = false
+store.isLoading = false
 
 if store.isLoading {
     //....
@@ -239,5 +239,17 @@ The AKSubscription framework is used extensively in this code to:
 - Fetch subscription information.
 - Manage subscription products.
 - Handle purchases and restore operations.
+
 - Check subscription status and environment.
 This integration ensures a seamless subscription management experience for the app.
+
+## Author
+Shrejash Chandel idevshrejash@gmail.com
+
+## License
+AKSubscription is available under the MIT license. See the LICENSE file for more info.
+
+![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 31 48](https://github.com/user-attachments/assets/09b3ee81-c922-47ea-9206-add9b2b853c5)
+![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 37 49](https://github.com/user-attachments/assets/7443c51c-11a3-4a42-b0bc-14c8b23e7725)
+![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 37 55](https://github.com/user-attachments/assets/9552b18d-ff3a-4a5b-8988-e9e105e06831)
+![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 38 05](https://github.com/user-attachments/assets/fbba4855-da7e-43b4-a7a2-36a6e7fb4464)
