@@ -33,7 +33,7 @@ import AKSubscription
 - The AKSubscription framework is imported to provide subscription-related functionalities, such as fetching subscription information, managing products, and handling purchase transactions.
 
 # Usage
-1. Accessing RenewableStore:
+1. Accessing Subscription Store:
 ```ruby
 //Renewable Subscription:
 private let store = RenewableStore.shared
