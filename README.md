@@ -249,7 +249,9 @@ Shrejash Chandel idevshrejash@gmail.com
 ## License
 AKSubscription is available under the MIT license. See the LICENSE file for more info.
 
-![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 31 48](https://github.com/user-attachments/assets/09b3ee81-c922-47ea-9206-add9b2b853c5)
-![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 37 49](https://github.com/user-attachments/assets/7443c51c-11a3-4a42-b0bc-14c8b23e7725)
-![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 37 55](https://github.com/user-attachments/assets/9552b18d-ff3a-4a5b-8988-e9e105e06831)
-![Simulator Screenshot - iPhone 15 Pro - 2025-06-11 at 17 38 05](https://github.com/user-attachments/assets/fbba4855-da7e-43b4-a7a2-36a6e7fb4464)
+# Example Images
+<img src="https://github.com/user-attachments/assets/09b3ee81-c922-47ea-9206-add9b2b853c5" width="300" />
+<img src="https://github.com/user-attachments/assets/7443c51c-11a3-4a42-b0bc-14c8b23e7725" width="300" />
+<img src="https://github.com/user-attachments/assets/9552b18d-ff3a-4a5b-8988-e9e105e06831" width="300" />
+<img src="https://github.com/user-attachments/assets/fbba4855-da7e-43b4-a7a2-36a6e7fb4464" width="300" />
+
