@@ -36,19 +36,19 @@ import AKSubscription
 1. Accessing Subscription Store:
 ```ruby
 //Renewable Subscription:
-private let store = RenewableStore.shared
+let store = RenewableStore.shared
 ```
 ```ruby
 //Non-Renewable Subscription:
-private let store = NonRenewableStore.shared
+let store = NonRenewableStore.shared
 ```
 ```ruby
 //Consumable Subscription:
-private let store = ConsumableStore.shared
+let store = ConsumableStore.shared
 ```
 ```ruby
 //Non-Consumable Subscription:
-private let store = NonConsumableStore.shared
+let store = NonConsumableStore.shared
 ```
 - Singleton provided by AKSubscription to manage subscription-related data and operations.
 - The shared instance is used throughout the code to access subscription-related methods and properties.
