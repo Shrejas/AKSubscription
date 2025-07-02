@@ -32,12 +32,12 @@ struct RenewableSubscriptionView: View {
                                             print("🔥 Latest Purchased: \(latest.productId ?? "Unknown")")
                                         }
                                         for item in info.history {
-                                            print("💳 Product: \(item.productId ?? "N/A"), Subscribed: \(item.isSubscribed)")
+                                            print("💳 Product: \(item.productId ?? "N/A"), Subscribed: \(String(describing: item.isSubscribed))")
                                         }
                                         let result = await RenewableStore.shared.fetchSubscriptionInfo()
                                         switch result {
                                         case .success(let latest, _):
-                                            print(latest)
+                                            print(latest as Any)
                                         case .failure(let error):
                                             print(error)
                                         }
@@ -143,7 +143,7 @@ extension RenewableSubscriptionView {
                                 .font(.subheadline)
                            
                             if let payload = store.getSubscription(for: product.id) {
-                                if let endDate = payload.subscriptionEndDate {
+                                if payload.subscriptionEndDate != nil {
                                     if let isLatest = payload.isLatestPurchased, isLatest {
                                         Text("✅ Active Subscription")
                                             .font(.footnote)
@@ -205,8 +205,12 @@ extension RenewableSubscriptionView {
             print("Product To Purchase Price = \(product.displayPrice)")
             print("Product To Purchase Id = \(product.id)")
             
-            store.purchaseProduct(product: product) { transaction in
-                print(transaction)
+            store.purchaseProduct(product: product) { transaction,error  in
+                if let error {
+                    print("Purchase Error: \(error.localizedDescription)")
+                    return
+                }
+                print(transaction as Any)
                 Task {
                     store.isAnySubscriptionActive = await store.isAnySubscriptionActive()
                 }
