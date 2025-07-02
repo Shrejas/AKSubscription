@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AKSubscription'
-  s.version          = '1.1.4'
+  s.version          = '1.1.5'
   s.summary          = 'Making purchase of subscription more easy hassle Free via AppKitSubscriptions'
   s.description      = <<-DESC
     AKSubscription is a comprehensive iOS library that simplifies in-app subscription handling using StoreKit.
