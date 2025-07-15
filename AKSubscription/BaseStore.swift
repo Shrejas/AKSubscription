@@ -10,45 +10,53 @@ import StoreKit
 import os
 
 // MARK: - Base Store Class
-
-@Observable
-public class BaseStore {
+@MainActor
+public class BaseStore: ObservableObject {
     
     // MARK: - Properties
     
-    var allProducts: [Product] = []
+    @Published public var allProducts: [Product] = []
     public static var productIds: [String] = []
-    public var isLoading: Bool = false
-    var alertMessage: String = ""
-    var alertType: String = ""
-    var showAlert: Bool = false
-    var subscriptionGroups: [String: [Product]] = [:]
+    @Published public var isLoading: Bool = false
+    @Published public var alertMessage: String = ""
+    @Published public var alertType: String = ""
+    @Published public var showAlert: Bool = false
+    @Published public var subscriptionGroups: [String: [Product]] = [:]
     public let logger = Logger(subsystem: "com.infoenum.subscriptions", category: "Store")
 
     
     // MARK: - Initialization
     
     public init() {
-        Task { await requestProducts() }
+        Task {
+            let result = await requestProducts()
+            switch result {
+            case .success(let products):
+                self.allProducts = products
+            case .failure(let error):
+                logger.error("❌ Product request failed: \(error.localizedDescription, privacy: .public)")
+                // Optionally: Notify UI or handle error accordingly
+            }
+        }
+
         Task.detached { [weak self] in
             await self?.listenForTransactions()
         }
     }
-    
+
     // MARK: - Product Request
-    
+
     /// Requests products from the App Store using identifiers from the plist.
-    @MainActor
-    func requestProducts() async {
+    /// - Returns: Result type containing either the list of products or an error.
+    func requestProducts() async -> Result<[Product], Error> {
         do {
             let products = try await Product.products(for: BaseStore.productIds)
-            self.allProducts = products
+            return .success(products)
         } catch {
-            logger.error("❌ Failed product request: \(error.localizedDescription, privacy: .public)")
-
+            return .failure(error)
         }
     }
-    
+
     // MARK: - Transaction Handling
     
     /// Continuously listens for transaction updates from the App Store.

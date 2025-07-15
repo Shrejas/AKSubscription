@@ -9,7 +9,7 @@ import SwiftUI
 import AKSubscription
 
 struct ConsumableProductView: View {
-    private var store = ConsumableStore.shared
+   @StateObject private var store = ConsumableStore.shared
     @State var userCoins: Int = UserDefaults.standard.integer(forKey: "userCoins")
     @State var showAlert = false
     var body: some View {
